@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'top#index'
+  get  'members', to: 'members#index'
+  post 'members', to: 'members#create'
+  get  'shuffle', to: 'members#shuffle'
+  get  'map',     to: 'members#map'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

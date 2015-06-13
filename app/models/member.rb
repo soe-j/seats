@@ -3,7 +3,7 @@ class Member < ActiveRecord::Base
 
     members = Member.all.shuffle.sort_by {|mem| mem.year }
 
-    Member.all.each_with_index do |mem, idx|
+    members.each_with_index do |mem, idx|
       mem.group_id = idx % groups_num + 1
       mem.save
     end

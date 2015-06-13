@@ -22,7 +22,7 @@ class MembersController < ApplicationController
   end
 
   def map
-    @groups = Member.groups
+    @groups = Group.all
   end
 
 private

@@ -1,0 +1,12 @@
+<% @groups.each do |group| %>
+  <div>
+    <%= group.id %>
+    <div>
+      <% group.members.each do |member| %>
+        <div>
+          <%= member.name %> : <%= member.year %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

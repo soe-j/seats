@@ -9,3 +9,9 @@
     <%= member.name %> : <%= member.year %>
   </div>
 <% end %>
+
+<%= form_tag '/shuffle' do |f| %>
+  <%= label_tag :groups_num %>
+  <%= number_field_tag :groups_num %>
+  <%= submit_tag 'shuffle' %>
+<% end %>

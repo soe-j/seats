@@ -10,11 +10,14 @@ class MembersController < ApplicationController
   end
 
   def shuffle
-    redirect '/map'
+    groups_num = params[:groups_num].to_i
+    Member.devide_groups(groups_num)
+
+    redirect_to '/map'
   end
 
   def map
-
+    @groups = Member.groups
   end
 
 private

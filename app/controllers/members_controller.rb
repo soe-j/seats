@@ -11,6 +11,11 @@ class MembersController < ApplicationController
 
   def shuffle
     groups_num = params[:groups_num].to_i
+
+    if groups_num == 0
+      return redirect_to '/members', alert: 'wrong number of groups'
+    end
+
     Member.devide_groups(groups_num)
 
     redirect_to '/map'

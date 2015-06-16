@@ -16,6 +16,7 @@ class MembersController < ApplicationController
       return redirect_to '/members', alert: 'wrong number of groups'
     end
 
+    Group.create_q(groups_num)
     Member.devide_groups(groups_num)
 
     redirect_to '/map'

@@ -12,3 +12,11 @@
     </div>
   </div>
 <% end %>
+
+<%= form_for(@member) do |f| %>
+  <%= f.label :name %> : <%= f.text_field :name %>
+  <%= f.label :year %> : <%= f.number_field :year %>
+  <%= f.label :group_id %> : <%= f.number_field :group_id %>
+  <input type="hidden" name="page" value="map" %>
+  <%= f.submit %>
+<% end %>

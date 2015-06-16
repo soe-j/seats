@@ -1,7 +1,9 @@
 <% @groups.each do |group| %>
-  <div>
-    <%= group.name %>
-    <div>
+  <div class="group">
+    <div class="group_name">
+      <%= group.name %>
+    </div>
+    <div class="group_members">
       <% group.members.each do |member| %>
         <div>
           <%= member.name %> : <%= member.year %>

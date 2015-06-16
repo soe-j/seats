@@ -4,11 +4,13 @@
   <%= f.submit %>
 <% end %>
 
-<% @members.each do |member| %>
-  <div>
-    <%= member.name %> : <%= member.year %>
-  </div>
-<% end %>
+<div id="members_list">
+  <% @members.each do |member| %>
+    <div>
+      <%= member.name %> : <%= member.year %>
+    </div>
+  <% end %>
+</div>
 
 <%= form_tag '/shuffle' do |f| %>
   <%= label_tag :groups_num %>

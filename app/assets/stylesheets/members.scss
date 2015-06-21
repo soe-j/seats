@@ -4,14 +4,17 @@
 
 
 #members_list {
-  margin: 15px 0;
+  margin: 16px 8px;
 }
 
 .group {
-  margin: 15px 0;
+  margin: 16px 8px;
   display: inline-block;
   vertical-align: top;
   width: 20%;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  height: 200px;
 }
 
 .group_name {
@@ -25,5 +28,6 @@
 }
 
 form {
-  margin: 15px 0;
+  margin: 16px 8px;
+  display: inline-block;
 }

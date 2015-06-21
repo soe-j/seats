@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/' => redirect("/members")
-  get  'members', to: 'members#index'
-  post 'members', to: 'members#create'
+  resources :members
+
   post 'shuffle', to: 'members#shuffle'
   get  'map',     to: 'members#map'
 

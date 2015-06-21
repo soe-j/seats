@@ -31,3 +31,24 @@ form {
   margin: 16px 8px;
   display: inline-block;
 }
+
+.btn_blue{
+  background-color: #19b1c6;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.btn_blue:hover{
+  background-color: #0c91a3;
+}
+
+.over_wrap{
+  padding: 20px;
+  background-color: #f5f5f5;
+  height: 100%;
+  text-align: center;
+}
+
+.group_num_wrap{
+  padding: 20px;
+}

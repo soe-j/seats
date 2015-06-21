@@ -9,21 +9,26 @@ class MembersController < ApplicationController
 
     return redirect_to '/map' if params[:page] == 'map'
 
-    redirect_to '/members'
+    redirect_to members_path
+  end
+
+  def destroy
+    Member.find_by(id: params[:id]).destroy
+    redirect_to members_path
   end
 
   def shuffle
     groups_num = params[:groups_num].to_i
 
     if groups_num == 0
-      return redirect_to '/members', alert: 'wrong number of groups'
+      return redirect_to members_path, alert: 'wrong number of groups'
     end
 
     Group.delete_all
     Group.create_q(groups_num)
     Member.devide_groups(groups_num)
 
-    redirect_to '/map'
+    redirect_to map_path
   end
 
   def map

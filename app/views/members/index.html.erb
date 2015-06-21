@@ -7,7 +7,7 @@
 <div id="members_list">
   <% @members.each do |member| %>
     <div>
-      <%= member.name %> : <%= member.year %>
+      <%= member.name %> : <%= member.year %> <%= link_to '☒', member, method: :delete %>
     </div>
   <% end %>
 </div>

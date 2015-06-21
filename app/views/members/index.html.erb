@@ -1,23 +1,31 @@
-<%= form_for(@member) do |f| %>
-  <%= f.label :name %> : <%= f.text_field :name %>
-  <%= f.label :year %> : <%= f.number_field :year %>
-  <%= f.submit %>
-<% end %>
+<div class="over_wrap">
+  <div class="logo">
+    <%= image_tag asset_path 'logo_shibaura.png' %>
+  </div>
+  <%= form_for(@member) do |f| %>
+    <%= f.label :name %> : <%= f.text_field :name ,:class => 'form-control'%>
+    <%= f.label :year %> : <%= f.number_field :year ,:class => 'form-control' ,:placeholder =>'of entrance'%>
+    <%= f.submit :class => 'btn btn_blue' %>
+  <% end %>
 
-<div id="members_list">
-  <% @members.each do |member| %>
-    <div>
-      <%= member.name %> : <%= member.year %> <%= link_to '☒', member, method: :delete %>
-    </div>
+  <div id="members_list">
+    <% @members.each do |member| %>
+      <div>
+        <%= member.name %> : <%= member.year %> <%= link_to member, method: :delete do |a| %>
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="group_num_wrap">
+  <%= form_tag '/shuffle' do |f| %>
+    <%= label_tag :groups_num %>
+    <%= number_field_tag :groups_num %>
+    <%= submit_tag 'shuffle',:class => 'btn btn_blue'%>
+  <% end %>
+
+  <%= form_tag '/map', method: 'get' do |f| %>
+    <% submit_tag 'map' ,:class => 'btn btn_blue'%>
   <% end %>
 </div>
-
-<%= form_tag '/shuffle' do |f| %>
-  <%= label_tag :groups_num %>
-  <%= number_field_tag :groups_num %>
-  <%= submit_tag 'shuffle' %>
-<% end %>
-
-<%= form_tag '/map', method: 'get' do |f| %>
-  <% submit_tag 'map' %>
-<% end %>
